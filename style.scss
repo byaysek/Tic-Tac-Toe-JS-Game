@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  /* justify-content: flex-end; */
+  /* color: azure; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: darken($color: #000000, $amount: 0);
+}
+.container {
+  background: khaki;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 25px;
+  .title {
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 50px;
+  }
+  .status_action {
+    display: flex;
+    font-size: 32px;
+    color: rgba(black, 0.5);
+    justify-content: space-between;
+    height: 30px;
+    .reset {
+      color: black;
+      border: 2px solid black;
+      border-radius: 5px;
+      height: 2rem;
+      width: 5rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      text-align: center;
+      justify-content: center;
+      cursor: pointer;
+      line-height: 30px;
+      &:hover {
+        color: rgba(black, 0.6);
+        border-color: rgba(black, 0);
+      }
+    }
+    .status {
+      color: black;
+      line-height: 30px;
+      span {
+        color: maroon;
+      }
+    }
+  }
+  .game_grid {
+    background: rgba(black, 0.5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 50px;
+    .game_cell {
+      height: 200px;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: khaki;
+      cursor: pointer;
+    }
+    .x,
+    .o {
+      cursor: auto;
+    }
+    .x::after {
+      content: '✕';
+      font-size: 150px;
+      line-height: 0px;
+    }
+    .o::after {
+      content: '◯';
+      color: maroon;
+      font-size: 130px;
+      line-height: 0px;
+    }
+    .won::after {
+      color: mediumblue;
+      font-weight: bold;
+    }
+  }
+}
+
+@media only screen and (max-width: 2048px) {
+  .title {
+    font-size: x-large !important;
+  }
+  .status_action {
+    font-size: 24px !important;
+    .reset {
+      height: 2rem;
+      width: 5rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+    }
+  }
+  .game_grid {
+    margin-top: 35px !important;
+    gap: 12px !important;
+    .game_cell {
+      height: 150px !important;
+      width: 150px !important;
+    }
+    .x::after {
+      font-size: 120px !important;
+    }
+    .o::after {
+      font-size: 100px !important;
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .title {
+    font-size: large !important;
+  }
+  .status_action {
+    font-size: 18px !important;
+    .reset {
+      height: 1.5rem !important;
+      width: 3rem !important;
+      padding: 0rem !important;
+    }
+  }
+  .game_grid {
+    margin-top: 25px !important;
+    gap: 10px !important;
+    .game_cell {
+      height: 100px !important;
+      width: 100px !important;
+    }
+    .x::after {
+      font-size: 90px !important;
+    }
+    .o::after {
+      font-size: 65px !important;
+    }
+  }
+}
+@media only screen and (max-width: 540px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+    .game_grid {
+      margin-top: 25px !important;
+      gap: 5px !important;
+      .game_cell {
+        height: 60px !important;
+        width: 60px !important;
+      }
+      .x::after {
+        font-size: 60px !important;
+      }
+      .o::after {
+        font-size: 40px !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,205 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* justify-content: flex-end; */
+  /* color: azure; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: black;
+}
+
+.container {
+  background: khaki;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.container .title {
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 50px;
+}
+
+.container .status_action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 30px;
+}
+
+.container .status_action .reset {
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 2rem;
+  width: 5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  line-height: 30px;
+}
+
+.container .status_action .reset:hover {
+  color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.container .status_action .status {
+  color: black;
+  line-height: 30px;
+}
+
+.container .status_action .status span {
+  color: maroon;
+}
+
+.container .game_grid {
+  background: rgba(0, 0, 0, 0.5);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.container .game_grid .game_cell {
+  height: 200px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: khaki;
+  cursor: pointer;
+}
+
+.container .game_grid .x,
+.container .game_grid .o {
+  cursor: auto;
+}
+
+.container .game_grid .x::after {
+  content: '✕';
+  font-size: 150px;
+  line-height: 0px;
+}
+
+.container .game_grid .o::after {
+  content: '◯';
+  color: maroon;
+  font-size: 130px;
+  line-height: 0px;
+}
+
+.container .game_grid .won::after {
+  color: mediumblue;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 2048px) {
+  .title {
+    font-size: x-large !important;
+  }
+  .status_action {
+    font-size: 24px !important;
+  }
+  .status_action .reset {
+    height: 2rem;
+    width: 5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  .game_grid {
+    margin-top: 35px !important;
+    gap: 12px !important;
+  }
+  .game_grid .game_cell {
+    height: 150px !important;
+    width: 150px !important;
+  }
+  .game_grid .x::after {
+    font-size: 120px !important;
+  }
+  .game_grid .o::after {
+    font-size: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .title {
+    font-size: large !important;
+  }
+  .status_action {
+    font-size: 18px !important;
+  }
+  .status_action .reset {
+    height: 1.5rem !important;
+    width: 3rem !important;
+    padding: 0rem !important;
+  }
+  .game_grid {
+    margin-top: 25px !important;
+    gap: 10px !important;
+  }
+  .game_grid .game_cell {
+    height: 100px !important;
+    width: 100px !important;
+  }
+  .game_grid .x::after {
+    font-size: 90px !important;
+  }
+  .game_grid .o::after {
+    font-size: 65px !important;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+  .container .game_grid {
+    margin-top: 25px !important;
+    gap: 5px !important;
+  }
+  .container .game_grid .game_cell {
+    height: 60px !important;
+    width: 60px !important;
+  }
+  .container .game_grid .x::after {
+    font-size: 60px !important;
+  }
+  .container .game_grid .o::after {
+    font-size: 40px !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
